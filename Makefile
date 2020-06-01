@@ -313,7 +313,7 @@ tesseract.built: tesseract-$(TESSERACT_VERSION)
 	cd $< && \
 		sh autogen.sh && \
 		PKG_CONFIG_PATH="$(LOCAL)/lib/pkgconfig" \
-			./configure --prefix=$(LOCAL) && \
+			./configure  --enable-debug --prefix=$(LOCAL) && \
 		LDFLAGS="-L$(LOCAL)/lib"\
 			make -j$(CORES) install training-install && \
 		date > "$@"
